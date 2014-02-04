@@ -14,15 +14,21 @@ count = 0
 
 while True:
     count += 1
-    user_guess = int(raw_input("> "))
+    user_input = raw_input("> ")
 
-    if user_guess < 1 or user_guess > 100:
-        print "Sorry, that doesn't seem to be between 1 and 100.",
+    if user_input.isdigit() == False:
+        print "Sorry, that doesn't seem to be a number."
         print "Please enter a number between 1 and 100."
-    elif user_guess > computer_number:
-        print "Your guess is too high, try again."
-    elif user_guess < computer_number:
-        print "Your guess is too low, try again."
     else:
-        print "Congratulations, %s! You found my number, %d, in %d attempts!" % (name, computer_number, count)
-        break
+        user_guess = int(user_input)
+
+        if user_guess < 1 or user_guess > 100:
+            print "Sorry, that doesn't seem to be between 1 and 100.",
+            print "Please enter a number between 1 and 100."
+        elif user_guess > computer_number:
+            print "Your guess is too high, try again."
+        elif user_guess < computer_number:
+            print "Your guess is too low, try again."
+        else:
+            print "Congratulations, %s! You found my number, %d, in %d attempts!" % (name, computer_number, count)
+            break
