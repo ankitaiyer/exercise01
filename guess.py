@@ -7,6 +7,7 @@ print "Hey there, welcome to our guessing game!"
 print "What's your name?"
 name = raw_input("> ")
 
+#continue Playing till user quits
 while True:
     # generate random integer between 1 and 100
     computer_number = random.randint(1, 100)
@@ -45,7 +46,7 @@ while True:
             elif user_guess < computer_number:
                 print "Your guess is too low, try again."
 
-            # for correct guess, congratulate and end game
+            # for correct guess, congratulate and ask user if they want to play again
             else:
                 print "Congratulations, %s! You found my number, %d, in %d attempts!" % (name, computer_number, count)
                 print "Would you like to play again? Please type Y for yes or N for no."
