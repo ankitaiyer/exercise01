@@ -50,12 +50,14 @@ while True:
             else:
                 print "Congratulations, %s! You found my number, %d, in %d attempts!" % (name, computer_number, count)
                 print "Would you like to play again? Please type Y for yes or N for no."
-                play_again = raw_input("> ")
+                while True:
+                    play_again = raw_input("> ")
 
-                if play_again == "Y":
-                    break
-                elif play_again == "N":
-                    print "Okay, thanks for playing!"
-                    exit(0)
-                else:
-                    print "Sorry, please type Y or N."
+                    if play_again == "Y":
+                        break
+                    elif play_again == "N":
+                        print "Okay, thanks for playing!"
+                        exit(0)
+                    else:
+                        print "Sorry, please type Y or N."
+                break
