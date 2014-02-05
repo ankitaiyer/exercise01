@@ -1,5 +1,6 @@
 # need random module to generate random integer
 import random
+import string
 from sys import exit
 
 # greet user and ask for name
@@ -51,12 +52,14 @@ while True:
                 print "Congratulations, %s! You found my number, %d, in %d attempts!" % (name, computer_number, count)
                 print "Would you like to play again? Please type Y for yes or N for no."
                 while True:
-                    play_again = raw_input("> ")
+                    play_again = string.upper(raw_input("> "))
 
                     if play_again == "Y":
+                        print "***** starting a new game ******"
                         break
                     elif play_again == "N":
                         print "Okay, thanks for playing!"
+                        print "-----------------"
                         exit(0)
                     else:
                         print "Sorry, please type Y or N."
